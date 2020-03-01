@@ -1,9 +1,11 @@
+package pkg412_alphacare;
+
 
 public class Patient {
 
     private long patientID;
     private String patientPhysician;
-    private MedicalRecords medRecords;
+    private MedicalRecordsList medRecordsList;
 
     /**
      * This is the default constructor for Patient class
@@ -18,10 +20,10 @@ public class Patient {
      * @param pPhysician Sets the patient's physician
      * @param theRecords Sets the patient's medical records
      */
-    public Patient(long pID, String pPhysician, MedicalRecords theRecords){
+    public Patient(long pID, String pPhysician, MedicalRecordsList theRecords){
         this.patientID        = pID;
         this.patientPhysician = pPhysician;
-        this.medRecords       = theRecords;
+        this.medRecordsList       = theRecords;
     }
 
     /**
@@ -60,16 +62,16 @@ public class Patient {
      * Returns the current patient's medical records
      * @return A medical record object that represents the patient's medical records
      */
-    public MedicalRecords getMedRecords() {
-        return medRecords;
+    public MedicalRecordsList getMedRecords() {
+        return medRecordsList;
     }
 
     /**
      * Sets attributes of the current patient's medical records
      * @param changeRecords Sets medical record attributes for current patient
      */
-    public void setMedRecords(MedicalRecords changeRecords) {
-        this.medRecords = changeRecords;
+    public void setMedRecords(MedicalRecordsList changeRecords) {
+        this.medRecordsList = changeRecords;
     }
 
 }
