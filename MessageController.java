@@ -1,10 +1,8 @@
+package pkg412_alphacare;
+
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Taylor
- */
-public class MessageController {
+public class MessageCntl {
 
     private boolean medicalPersonnel;
     private boolean patient;
@@ -15,7 +13,7 @@ public class MessageController {
     private boolean offline;
 
     //Constructor for the Message class
-    public MessageController(boolean a, boolean b, String c, String d, String e, boolean f, boolean g){
+    public MessageCntl(boolean a, boolean b, String c, String d, String e, boolean f, boolean g){
         medicalPersonnel = a;
         patient = b;
         chat = c;
