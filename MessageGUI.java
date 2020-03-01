@@ -1,13 +1,11 @@
+package pkg412_alphacare;
+
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-/**
- *
- * @author Taylor
- */
 public class MessageGUI extends JFrame{
 
     JFrame f = new JFrame("New");
