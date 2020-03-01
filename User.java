@@ -1,5 +1,4 @@
-
-package createprofile;
+package pkg412_alphacare;
 
 public class User {
 
