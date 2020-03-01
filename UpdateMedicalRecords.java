@@ -1,10 +1,11 @@
+package pkg412_alphacare;
+
 public class UpdateMedicalRecords
 {
-   private long PatientID
-   private String GeneralRecords
-   private String Immunizations
-   private String Prescriptions
-
+   private long PatientID;
+   private String GeneralRecords;
+   private String Immunizations;
+   private String Prescriptions;
 
   public UpdateMedicalRecords()
   {
@@ -16,12 +17,12 @@ public class UpdateMedicalRecords
     return PatientID;
   }
 
-  public MedicalRecords updateGeneralRecords()
+  public String updateGeneralRecords()
   {
     return GeneralRecords;
   }
 
-  public MedicalRecords updateimmunizations()
+  public String updateimmunizations()
   {
     if (PatientID == PatientID)
        {
@@ -33,7 +34,7 @@ public class UpdateMedicalRecords
        }
         return Immunizations;
   }
-  
+
   public long Prescriptions()
   {
     return Prescriptions();
