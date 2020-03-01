@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- /**
- *
- * @author Amber Kirk
- */
+package pkg412_alphacare;
+
 public class GeneralRecordInfo {
     private String patientName;
     private String date;
