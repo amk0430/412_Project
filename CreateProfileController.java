@@ -1,12 +1,13 @@
+package pkg412_alphacare;
 
-public class CreateProfileController {
+public class CreateProfileCntl {
 
     private UserList theUserList;
 
     /**
      * This is the default constructor for the CreateProfileController class
      */
-    public CreateProfileController(){
+    public CreateProfileCntl(){
 
     }
 
@@ -20,7 +21,6 @@ public class CreateProfileController {
     public boolean createNewProfile(String username, String password){
         User newUser = new User(username, password);
         boolean newUserSuccess = theUserList.addUser(newUser);
-
         return newUserSuccess;
     }
 
