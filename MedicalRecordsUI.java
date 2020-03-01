@@ -1,3 +1,5 @@
+package pkg412_alphacare;
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -7,12 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-/**
- *
- * @author Amber Krik
- */
-public class MedicalRecordUI extends JFrame{
-
+public class MedicalRecordsUI extends JFrame{
 
     private final MedicalRecordsCntl medicalRecordCntl;
 
@@ -34,7 +31,7 @@ public class MedicalRecordUI extends JFrame{
     private JPanel buttonPanel;
 
 
-    public MedicalRecordUI(MedicalRecordsCntl medicalRecordCntl, int startIndex)
+    public MedicalRecordsUI(MedicalRecordsCntl medicalRecordCntl, int startIndex)
     {
         this.medicalRecordCntl = medicalRecordCntl;
         recordIndex = startIndex;
