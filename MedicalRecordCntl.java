@@ -1,18 +1,13 @@
-/**
- *
- * @author Amber Kirk
- */
- 
+package pkg412_alphacare;
+
 public class MedicalRecordsCntl {
 
     private final MedicalRecordsList prescriptionList;
     private final MedicalRecordsList generalRecordList;
     private final MedicalRecordsList immunizationList;
     private final MedicalRecordsList testResultList;
-    private final MedicalRecordUI medicalRecordUI;
+    private final MedicalRecordsUI medicalRecordUI;
     private final int startIndex = 0;
-
-
 
     //Constructor for the MedicalRecordsList class
     public MedicalRecordsCntl() {
@@ -20,10 +15,9 @@ public class MedicalRecordsCntl {
         generalRecordList = new MedicalRecordsList();
         immunizationList = new MedicalRecordsList();
         testResultList = new MedicalRecordsList();
-        medicalRecordUI = new MedicalRecordUI(this, startIndex);
+        medicalRecordUI = new MedicalRecordsUI(this, startIndex);
         medicalRecordUI.setVisible(true);
     }
-
 
     public MedicalRecordsList getPrescriptionList()
     {
@@ -64,4 +58,5 @@ public class MedicalRecordsCntl {
     {
         return testResultList.getTestResultsfromList().get(index);
     }
+
 }
