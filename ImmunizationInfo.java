@@ -1,7 +1,5 @@
-/**
- *
- * @author Amber Kirk
- */
+package pkg412_alphacare;
+
 public class ImmunizationInfo {
     private String patientName;
     private String date;
