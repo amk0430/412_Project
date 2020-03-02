@@ -16,7 +16,7 @@ public class testharness {
          */
         String testUsername = "123";
         
-        if ("123".equals(userData.getUser(testUsername).toString())) {
+        if ("123".equals(userData.getUser(testUsername).getUsername())) {
             System.out.println("There is a user with username of " + testUsername);
         }
         
