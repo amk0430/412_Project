@@ -10,13 +10,13 @@ public class testharness {
          * Test if we can add user to user list.
          */
         userData.addUser(new User("123", "123"));
-        System.out.println(userData.getUser("123"));
+        
         /**
          * Test if we can return a user object based on username.
          */
         String testUsername = "123";
         
-        if ("123".equals(userData.getUser(testUsername))) {
+        if ("123".equals(userData.getUser(testUsername).toString())) {
             System.out.println("There is a user with username of " + testUsername);
         }
         
@@ -227,4 +227,3 @@ public class testharness {
     }
     
 }
-
