@@ -1,3 +1,17 @@
+
+package pkg412_alphacare;
+
+import pkg412_alphacare.test.Patient;
+import pkg412_alphacare.test.Physician;
+import pkg412_alphacare.test.MedicalRecordsList;
+import pkg412_alphacare.test.LoginCntl;
+import pkg412_alphacare.test.PrescriptionInfo;
+import pkg412_alphacare.test.TestResultInfo;
+import pkg412_alphacare.test.ImmunizationInfo;
+import pkg412_alphacare.test.GeneralRecordInfo;
+import pkg412_alphacare.test.UserList;
+import pkg412_alphacare.test.User;
+
 public class testharness {
     
     UserList userData = new UserList();
@@ -102,8 +116,8 @@ public class testharness {
          */
         MedicalRecordsList medicalrecordslist = new MedicalRecordsList();
         medicalrecordslist.addPrescriptionToList();
-        if(medicalrecordslist.getPrescriptionfromList().toString().matches(
-"Prescription{patientName=Jane Doe, date=May 2, precriptionName=Pepcid, description=For an upset stomach, physicianName=Dr. Smith}")) {
+        if (medicalrecordslist.getPrescriptionfromList().toString().matches(
+"[Prescription{patientName=Jane Doe, date=May 2, precriptionName=Pepcid, description=For an upset stomach, physicianName=Dr. Smith}]")) {
             System.out.println("Correct data.");
         }
         else {
@@ -111,8 +125,8 @@ public class testharness {
         }
         
         medicalrecordslist.addGeneralRecordToList();
-        if(medicalrecordslist.getGeneralRecordsfromList().toString().matches(
-"General Record{patientName=Jane Doe, date=May 2, recordName=Appointment, description=Appointment Summary for May 2: ..., physicianName=Dr.Smith}")) {
+        if (medicalrecordslist.getGeneralRecordsfromList().toString().matches(
+"[General Record{patientName=Jane Doe, date=May 2, recordName=Appointment, description=Appointment Summary for May 2: ..., physicianName=Dr.Smith}]")) {
             System.out.println("Correct data.");
         }
         else {
@@ -121,7 +135,7 @@ public class testharness {
         
         medicalrecordslist.addImmunizationsToList();
         if(medicalrecordslist.getImmunizationsfromList().toString().matches(
-"Immunization{patientName=Jane Doe, date=May 2, immunizationName=Flu Shot, description=Influenza, physicianName=Dr. Smith}")) {
+"[Immunization{patientName=Jane Doe, date=May 2, immunizationName=Flu Shot, description=Influenza, physicianName=Dr. Smith}]")) {
             System.out.println("Correct data.");
         }
         else {
@@ -129,8 +143,8 @@ public class testharness {
         }
         
         medicalrecordslist.addTestResultsToList();
-        if(medicalrecordslist.getTestResultsfromList().toString().matches(
-"General Record{patientName=Jane Doe, date=May 2, testName=XRAY ABDOMEN, description=No significant bone lesions are seen, physicianName=Dr. Smith}")) {
+        if (medicalrecordslist.getTestResultsfromList().toString().matches(
+"[General Record{patientName=Jane Doe, date=May 2, testName=XRAY ABDOMEN, description=No significant bone lesions are seen, physicianName=Dr. Smith}]")) {
             System.out.println("Correct data.");
         }
         else {
@@ -138,8 +152,65 @@ public class testharness {
         }
         
         /**
-         * 
+         * Test functionality of
+         * Physician
+         * Patient
+         * Profile
+         * classes.
          */
+        Physician physician = new Physician();
+        physician.setPhysicianID(123456);
+        physician.setTitle("testtitle");
+        physician.setSpecialty("testspeciality");
+        
+        if (physician.getPhysicianID() == 123456) {
+            System.out.println("Test successful.");
+        }
+        else {
+            System.out.println("Error in Physician class.");
+        }
+        
+        if ("testtitle".equals(physician.getTitle())) {
+            System.out.println("Test successful.");
+        }
+        else {
+            System.out.println("Error in Physician class.");
+        }
+        
+        if ("testspeciality".equals(physician.getSpecialty())) {
+            System.out.println("Test successful.");
+        }
+        else {
+            System.out.println("Error in Physician class.");
+        }
+        
+        Patient patient = new Patient();
+        patient.setPatientID(123456);
+        patient.setPatientPhysician("testpatientphysician");
+        patient.setMedRecords(medicalrecordslist);  // Default data in MedicalRecordsList.
+        
+        if (patient.getPatientID() == 123456) {
+            System.out.println("Test successful.");
+        }
+        else {
+            System.out.println("Error in Patient class.");
+        }
+        
+        if ("testpatientphysician".equals(patient.getPatientPhysician())) {
+            System.out.println("Test successful.");
+        }
+        else {
+            System.out.println("Error in Patient class.");
+        }
+        
+        if (medicalrecordslist.equals(patient.getMedRecords())) {
+            System.out.println("Test successful.");
+        }
+        else {
+            System.out.println("Error in Patient class.");
+        }
+        
+        
     }
     
 }
