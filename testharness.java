@@ -1,6 +1,3 @@
-
-package pkg412_alphacare;
-
 public class testharness {
     
     UserList userData = new UserList();
@@ -28,6 +25,28 @@ public class testharness {
         /**
          * Test Login function.
          */
+        LoginCntl logincntl = new LoginCntl();
+        String testPassword = "123";
+        // testUsername and testPassword were added to user priviously.
+        
+        if (logincntl.verifyLogin(testUsername, testPassword) != true) {
+            System.out.println("Error. User should be authticated.");
+        }
+        
+        User theUser = new User();
+        String usernameInput = "";
+        String passwordInput = "";
+        // usernameInput and passwordInput are user inputs.
+        
+        if (!(theUser.getUsername().equals(usernameInput)) && (theUser.getPassword().equals(testPassword))) {
+            if (logincntl.verifyLogin(usernameInput, passwordInput) == true) {
+                System.out.println("Error. User should not be authenticated.");
+            }
+        }
+        
+        else {
+            System.out.println("Login test successful.");
+        }
         
         /**
          * Test if the data format is correct in
@@ -38,43 +57,85 @@ public class testharness {
          * classes.
          */
         PrescriptionInfo prescriptioninfo = new PrescriptionInfo();
-        if (prescriptioninfo.toString() != null) {
+        if (prescriptioninfo.toString().matches(
+"Prescription{" + "patientName=" + prescriptioninfo.getPatientName() + ", date=" + prescriptioninfo.getDate() + ", precriptionName=" + prescriptioninfo.getInfoName()
++ ", description=" + prescriptioninfo.getDescription() + ", physicianName=" + prescriptioninfo.getPhysicianName() +'}')) {
             System.out.println("Data format correct.");
         }
         else {
-            System.out.println("Error. No default data format.");
+            System.out.println("Data format not correct.");
         }
+        
         GeneralRecordInfo generalrecordinfo = new GeneralRecordInfo();
-        if (generalrecordinfo.toString() != null) {
+        if (generalrecordinfo.toString().matches(
+"General Record{" + "patientName=" + generalrecordinfo.getPatientName() + ", date=" + generalrecordinfo.getDate() + ", recordName=" + generalrecordinfo.getInfoName()
++ ", description=" + generalrecordinfo.getDescription() + ", physicianName=" + generalrecordinfo.getPhysicianName() +'}')) {
             System.out.println("Data format correct.");
         }
         else {
-            System.out.println("Error. No default data format.");
+            System.out.println("Data format not correct.");
         }
+        
         ImmunizationInfo immunizationinfo = new ImmunizationInfo();
-        if (immunizationinfo.toString() != null) {
+        if (immunizationinfo.toString().matches(
+"Immunization{" + "patientName=" + immunizationinfo.getPatientName() + ", date=" + immunizationinfo.getDate() + ", immunizationName=" + immunizationinfo.getInfoName()
+        + ", description=" + immunizationinfo.getDescription() + ", physicianName=" + immunizationinfo.getPhysicianName() +'}')) {
             System.out.println("Data format correct.");
         }
         else {
-            System.out.println("Error. No default data format.");
+            System.out.println("Data format not correct.");
         }
+        
         TestResultInfo testresultinfo = new TestResultInfo();
-        if (testresultinfo.toString() != null) {
+        if (testresultinfo.toString().matches(
+"General Record{" + "patientName=" + testresultinfo.getPatientName() + ", date=" + testresultinfo.getDate() + ", testName=" + testresultinfo.getInfoName()
+        + ", description=" + testresultinfo.getDescription() + ", physicianName=" + testresultinfo.getPhysicianName() +'}')) {
             System.out.println("Data format correct.");
         }
         else {
-            System.out.println("Error. No default data format.");
+            System.out.println("Data format not correct.");
         }
         
         /**
-         * Then test if the MedicalRecordsList object in MedicalRecordsList class
-         * can add data from above classes to itself.
+         * Test if default data can be added and retrieved
+         * and check their values in MedicalRecordsList class.
          */
         MedicalRecordsList medicalrecordslist = new MedicalRecordsList();
         medicalrecordslist.addPrescriptionToList();
+        if(medicalrecordslist.getPrescriptionfromList().toString().matches(
+"Prescription{patientName=Jane Doe, date=May 2, precriptionName=Pepcid, description=For an upset stomach, physicianName=Dr. Smith}")) {
+            System.out.println("Correct data.");
+        }
+        else {
+            System.out.println("Incorrect data.");
+        }
+        
         medicalrecordslist.addGeneralRecordToList();
+        if(medicalrecordslist.getGeneralRecordsfromList().toString().matches(
+"General Record{patientName=Jane Doe, date=May 2, recordName=Appointment, description=Appointment Summary for May 2: ..., physicianName=Dr.Smith}")) {
+            System.out.println("Correct data.");
+        }
+        else {
+            System.out.println("Incorrect data.");
+        }
+        
         medicalrecordslist.addImmunizationsToList();
+        if(medicalrecordslist.getImmunizationsfromList().toString().matches(
+"Immunization{patientName=Jane Doe, date=May 2, immunizationName=Flu Shot, description=Influenza, physicianName=Dr. Smith}")) {
+            System.out.println("Correct data.");
+        }
+        else {
+            System.out.println("Incorrect data.");
+        }
+        
         medicalrecordslist.addTestResultsToList();
+        if(medicalrecordslist.getTestResultsfromList().toString().matches(
+"General Record{patientName=Jane Doe, date=May 2, testName=XRAY ABDOMEN, description=No significant bone lesions are seen, physicianName=Dr. Smith}")) {
+            System.out.println("Correct data.");
+        }
+        else {
+            System.out.println("Incorrect data.");
+        }
         
         /**
          * 
