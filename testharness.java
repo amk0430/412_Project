@@ -1,16 +1,4 @@
-
 package pkg412_alphacare;
-
-import pkg412_alphacare.test.Patient;
-import pkg412_alphacare.test.Physician;
-import pkg412_alphacare.test.MedicalRecordsList;
-import pkg412_alphacare.test.LoginCntl;
-import pkg412_alphacare.test.PrescriptionInfo;
-import pkg412_alphacare.test.TestResultInfo;
-import pkg412_alphacare.test.ImmunizationInfo;
-import pkg412_alphacare.test.GeneralRecordInfo;
-import pkg412_alphacare.test.UserList;
-import pkg412_alphacare.test.User;
 
 public class testharness {
     
@@ -22,13 +10,13 @@ public class testharness {
          * Test if we can add user to user list.
          */
         userData.addUser(new User("123", "123"));
-        
+        System.out.println(userData.getUser("123"));
         /**
          * Test if we can return a user object based on username.
          */
         String testUsername = "123";
         
-        if ("123".equals(userData.getUser(testUsername).getUsername())) {
+        if ("123".equals(userData.getUser(testUsername))) {
             System.out.println("There is a user with username of " + testUsername);
         }
         
@@ -152,7 +140,7 @@ public class testharness {
         }
         
         /**
-         * Test functionality of
+         * Test functionalities to retrieve and update attributes in
          * Physician
          * Patient
          * Profile
@@ -210,7 +198,33 @@ public class testharness {
             System.out.println("Error in Patient class.");
         }
         
+        Profile profile = new Profile();
+        profile.setFirstName("testfirstname");
+        profile.setLastName("testlastname");
+        profile.setEmail("testemail");
+        
+        if (profile.getFirstName().equals("testfirstname")) {
+            System.out.println("Test successful.");
+        }
+        else {
+            System.out.println("Error in Profile class.");
+        }
+        
+        if (profile.getLastName().equals("testlastname")) {
+            System.out.println("Test successful.");
+        }
+        else {
+            System.out.println("Error in Profile class.");
+        }
+        
+        if (profile.getEmail().equals("testemail")) {
+            System.out.println("Test successful.");
+        }
+        else {
+            System.out.println("Error in Profile class.");
+        }
         
     }
     
 }
+
