@@ -59,19 +59,4 @@ public class UserList {
 }
 
 
-    /**
-     * Returns a user object based on username
-     * @param uname Finds the user associated with this username
-     * @return A user associated with the username
-     */
-    public User getUser(String uname){
-        for(User currentUser : userList){
-            if(currentUser.getUsername().equals(uname))
-            {
-                return currentUser;
-            }
-        }
-        return null;
-    }
-
 }
