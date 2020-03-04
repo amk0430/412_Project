@@ -18,17 +18,14 @@ public class UserList {
      * @param newUser Used to compare if user is already in user list
      * @return A boolean if we added user to the list or not
      */
-    public ArrayList<User> addUser(User newUser){
-        for(User theUser : getUserList()){
+    public boolean addUser(User newUser){
+        for(User theUser : userList){
             if(theUser.getUsername().equals(newUser.getUsername())){
-                return getUserList();
-            }
-            else {
-                getUserList().add(newUser);
+                return false;
             }
         }
-        getUserList().add(newUser);
-        return getUserList();
+        userList.add(newUser);
+        return true;
     }
     
     /**
@@ -37,7 +34,7 @@ public class UserList {
      * @return A user associated with the username
      */
     public User getUser(String uname){
-        for(User currentUser : getUserList()){
+        for(User currentUser : userList){
             if(currentUser.getUsername().equals(uname))
             {
                 return currentUser;
