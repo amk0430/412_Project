@@ -6,7 +6,6 @@
 public class MedicalRecordsCntl {
 
     private final MedicalRecordsList prescriptionList;
-    private final MedicalRecordsList generalRecordList;
     private final MedicalRecordsList immunizationList;
     private final MedicalRecordsList testResultList;
     private final MedicalRecordUI medicalRecordUI;
@@ -17,14 +16,13 @@ public class MedicalRecordsCntl {
     //Constructor for the MedicalRecordsList class
     public MedicalRecordsCntl() {
         prescriptionList = new MedicalRecordsList();
-        generalRecordList = new MedicalRecordsList();
         immunizationList = new MedicalRecordsList();
         testResultList = new MedicalRecordsList();
         medicalRecordUI = new MedicalRecordUI(this, startIndex);
         medicalRecordUI.setVisible(true);
     }
 
-
+    //Prescription
     public MedicalRecordsList getPrescriptionList()
     {
        return prescriptionList;
@@ -35,16 +33,7 @@ public class MedicalRecordsCntl {
         return prescriptionList.getPrescriptionfromList().get(index);
     }
 
-    public MedicalRecordsList getGeneralRecordList()
-    {
-       return generalRecordList;
-    }
-
-    public GeneralRecordInfo getGeneralRecord(int index)
-    {
-        return generalRecordList.getGeneralRecordsfromList().get(index);
-    }
-
+    //Immunization
     public MedicalRecordsList getImmunizationList()
     {
        return immunizationList;
@@ -55,6 +44,7 @@ public class MedicalRecordsCntl {
         return immunizationList.getImmunizationsfromList().get(index);
     }
 
+    //Test Result
     public MedicalRecordsList getTestResultList()
     {
        return testResultList;

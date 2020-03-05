@@ -1,6 +1,9 @@
-package pkg412_alphacare;
-
 import java.util.ArrayList;
+
+/**
+ *
+ * @author Amber Kirk
+ */
 
 /*
 addPrescriptionToList();
@@ -12,7 +15,6 @@ addTestResultsToList();
 public class MedicalRecordsList {
 
     private ArrayList<PrescriptionInfo> prescriptionList;
-    private ArrayList<GeneralRecordInfo> generalRecordList;
     private ArrayList<ImmunizationInfo> immunizationList;
     private ArrayList<TestResultInfo> testResultList;
 
@@ -75,4 +77,3 @@ public class MedicalRecordsList {
     }
 
 }
-
