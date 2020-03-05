@@ -23,4 +23,8 @@ public class LoginCntl {
         return false;
     }
 
+    public void createProfile(){
+      //go to CreateProfileCntl
+    }
+
 }

@@ -24,4 +24,8 @@ public class CreateProfileCntl {
         return newUserSuccess;
     }
 
+    public void editNewProfile(){
+      // go to ProfileCntl
+    }
+
 }
